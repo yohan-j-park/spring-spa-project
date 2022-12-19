@@ -1,0 +1,90 @@
+#board>.frm_search{
+    text-align: right;
+}
+#board>.title{
+    background: #8D72E1;
+    color:#fff;
+    padding:2px;
+    margin:3px 0;
+}
+#board .title{
+    width:1000px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1.5fr 1.5fr 1fr;
+}
+
+#board .item{
+	width:1000px;
+	display:grid;
+	grid-template-columns: 1fr 3fr 1.5fr 1.5fr 1fr;
+	
+}
+#board label{
+    display: inline-block;
+    width:66px;
+    text-align: right;
+}
+/* #board .no{ width:1fr;}
+#board .subject{width:3fr;}
+#board .id{ flex-grow:1.5fr;}
+#board .nal{ flex-grow:1.5fr;}
+#board .hit{ flex-grow:1fr;} */
+#board .item:hover{
+    background-color: #ddd;
+    cursor: pointer;
+}
+#board .item:last-child {
+    border-bottom:1px solid #ccc;
+    margin:3px 0;
+}
+#board .btnZone{
+    text-align: center;
+}
+#board .btnZone input{
+    border-radius: 14px;
+    border:1px solid #bbb;
+    padding:2px 7px;
+}
+/* 상세보기 -------------------------- */
+#board span.attFile{
+    background: #eee;
+    padding:3px 5px;
+    border-radius: 4px;
+}
+#board .frm_view>.doc{
+    min-height: 300px;
+    background: #eee;
+    padding:14px;
+    margin:10px 0;
+}
+
+/* update ------------------------- */
+#board .frm_update>.subject{
+    width:600px;
+}
+#board .frm_update>.doc{
+    width: 600px;
+    height:300px;
+}
+#board .frm_update .delFile{
+    width:auto;
+    display:inline-block;
+    margin:5px 14px;
+}
+input[type="checkbox"]:checked  ~ span{		
+    text-decoration:line-through;
+    color:#f00;
+    /*box-shadow: 0 0 0 10px orange;*/
+}
+
+#board .attFileZone span{
+	background-color:white;
+	display:inline-block;
+	width:150px;
+	height:100px;
+}
+
+#board .attFileZone span>img{
+	width:150px;
+	height:100px;
+}

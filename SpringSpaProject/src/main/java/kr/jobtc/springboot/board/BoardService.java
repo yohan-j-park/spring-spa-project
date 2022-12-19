@@ -34,17 +34,23 @@ public class BoardService {
 		if (cnt < 1) {
 			status.rollbackToSavepoint(savePoint);
 			flag = false;
-		}else{ 
-			status.rollbackToSavepoint(savePoint);
-			String[] delFile = new String[bVo.getAttList().size()];
-			for(int i=0; i<bVo.getAttList().size(); i++) {
-				delFile[i] = bVo.getAttList().get(i).getSysFile();
-			}
-			fileDelete(delFile);
-			}
+		} 
+//		else if (bVo.getAttList().size() > 0) {
+//			System.out.println("attSize : " + bVo.getAttList().size());
+//			int attCnt = mapper.insertAttList(bVo.getAttList());
+//			if (attCnt < 0) flag = false;
+//			manager.commit(status);
+//		} 
+//		else {
+//			manager.commit(status);
+//			String[] delFile = new String[bVo.getAttList().size()];
+//			for (int i = 0; i < bVo.getAttList().size(); i++) {
+//				delFile[i] = bVo.getAttList().get(i).getSysFile();
+//			}
+//			fileDelete(delFile);
+//		}
 		return flag;
-		}
-	
+	}
 
 	public void insertAttList(List<AttVo> attList) {
 		int cnt = mapper.insertAttList(attList);
@@ -85,10 +91,10 @@ public class BoardService {
 					b = false;
 				}
 			}
-		}else{ 
+		} else {
 			status.rollbackToSavepoint(savePoint);
 			delFile = new String[bVo.getAttList().size()];
-			for(int i=0; i<bVo.getAttList().size(); i++) {
+			for (int i = 0; i < bVo.getAttList().size(); i++) {
 				delFile[i] = bVo.getAttList().get(i).getSysFile();
 			}
 			fileDelete(delFile);
@@ -107,13 +113,15 @@ public class BoardService {
 			b = false;
 		} else if (bVo.getAttList().size() > 0) {
 			int attCnt = mapper.insertAttList(bVo.getAttList());
-			if(attCnt<0) b=false;
+			if (attCnt < 0)
+				b = false;
 		}
-		if(b) manager.commit(status);
-		else { 
+		if (b)
+			manager.commit(status);
+		else {
 			status.rollbackToSavepoint(savePoint);
 			String[] delFile = new String[bVo.getAttList().size()];
-			for(int i=0; i<bVo.getAttList().size(); i++) {
+			for (int i = 0; i < bVo.getAttList().size(); i++) {
 				delFile[i] = bVo.getAttList().get(i).getSysFile();
 			}
 			fileDelete(delFile);

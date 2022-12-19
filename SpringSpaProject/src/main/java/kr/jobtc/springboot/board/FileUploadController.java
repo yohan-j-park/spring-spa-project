@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class FileUploadController {
-	static String path="C:\\Users\\p_yoh\\eclipse-workspace\\SpringSpaProject\\src\\main\\resources\\static\\upload\\";
+	static String path="C:\\git-2208\\spring-spa-project\\SpringSpaProject\\src\\main\\resources\\static\\upload\\";
 	
 	@Autowired
 	BoardService service;
