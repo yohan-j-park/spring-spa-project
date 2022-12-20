@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Starbucks Japan입니다.</title>
+<title>Starbucks Japan & China 입니다.</title>
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css'>
 <link rel='icon' href='images/starbucks.png'/>
 <link rel='stylesheet' href='css/index.css'/>
